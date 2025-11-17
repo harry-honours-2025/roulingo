@@ -1,0 +1,18 @@
+[project]
+name = "roulingo"
+version = "0.1.0"
+description = "ASP application for the recurring PDP with transit duration and pickup frequency constraints"
+readme = "README.md"
+authors = [
+    { name = "Harry Porter", email = "h.porter23@icloud.com" },
+    { name = "Sebastian Sardiña", email = "ssardina@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+roulingo = "roulingo:invoke_roulingo"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
