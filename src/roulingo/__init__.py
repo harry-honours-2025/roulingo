@@ -5,7 +5,6 @@ import typing
 import roulingo.conversion
 import roulingo.processing
 import roulingo.solving
-import roulingo.validation
 
 
 def invoke_roulingo() -> None:
@@ -24,23 +23,20 @@ def construct_and_parse_args() -> dict[str, int | str | pathlib.Path]:
     construct_conversion_args(
         subparsers.add_parser(
             "convert",
-            help="convert `.csv` files into unprocessed `.lp` instances",
+            help="convert `.csv` files into an unprocessed `.lp` instance",
         )
     )
     construct_processing_args(
         subparsers.add_parser(
             "process",
-            help="convert unprocessed `.lp` files into valid instances",
+            help="preprocess an `.lp` instance",
         )
     )
     construct_solving_args(
         subparsers.add_parser(
             "solve",
-            help="invoke a solver over a processed `.lp` instance",
+            help="solve a preprocessed `.lp` instance",
         )
-    )
-    construct_generation_args(
-        subparsers.add_parser("generate", help="generate instances for testing")
     )
     args, extras = parser.parse_known_args()
     if args.sub == "solve":  # Pass Clingo options to solver.
