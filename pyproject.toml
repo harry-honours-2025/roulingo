@@ -8,7 +8,11 @@ authors = [
     { name = "Sebastian Sardiña", email = "ssardina@gmail.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "clingcon>=5.2.1.post2",
+    "clingo>=5.8.0",
+    "pandas>=2.3.3",
+]
 
 [project.scripts]
 roulingo = "roulingo:invoke_roulingo"
