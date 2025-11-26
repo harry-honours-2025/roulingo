@@ -28,21 +28,40 @@ based on [**answer set programming**](https://potassco.org) (ASP).
 
 An **instance** is defined by the following facts:
 
-- `node(X,T)` where:
+- **Nodes** `node(X,T)` where:
     - `X` is a unique identifier,
     - `T` denotes the transshipment cost per unit of demand.
-- `vehicle(V,C)` where:
-    - `V` is a unique identifier,
-    - `C` denotes a capacity.
-- `availability(V,B,E)` denotes a period of vehicle availability where:
-    - `V` is a vehicle identifier,
-    - `B` is the beginning date,
-    - `E` is the ending date.
 
-<!-- - `arc(X,Y,V,C,D)` denotes an arc from node `X` to node `Y` for vehicle `V` with travel cost `C` and duration `D`. -->
-<!-- - `month(M,B,E)` denotes a month `M` beginning at date `B` and ending after date `E`. -->
-<!-- - `demand(I,X,Y,M,Q,R,F,T)` denotes a demand `I` with origin node `X`, destination node `Y`, month of availability `M`, -->
-<!-- total quantity `Q`, revenue per unit delivered `R`, **minimum pickup frequency** `F`, and **maximum transit time** `T`. -->
+- **Vehicles** `vehicle(V,C)` where:
+    - `V` is a unique identifier,
+    - `C` denotes the vehicle’s capacity.
+
+- **Availability periods** `availability(V,B,E)` where:
+    - `V` is a vehicle identifier,
+    - `B` is the start date of the availability period,
+    - `E` is the end date of the availability period.
+
+- **Arcs** `arc(X,Y,V,C,D)` where:
+    - `X` is the origin node,
+    - `Y` is the destination node,
+    - `V` is the vehicle identifier,
+    - `C` is the travel cost on the arc,
+    - `D` is the travel duration.
+
+- **Months** `month(M,B,E)` where:
+    - `M` is a month identifier,
+    - `B` is the date the month begins,
+    - `E` is the date the month ends.
+
+- **Demands** `demand(I,X,Y,M,Q,R,F,T)` where:
+    - `I` is a unique demand identifier,
+    - `X` is the origin node,
+    - `Y` is the destination node,
+    - `M` is the month of availability,
+    - `Q` is the total quantity demanded,
+    - `R` is the revenue per unit delivered,
+    - `F` is the minimum pickup frequency,
+    - `T` is the maximum transit time.
 
 > [!NOTE]
 > Transshipment is not currently supported,
