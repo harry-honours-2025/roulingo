@@ -67,6 +67,8 @@ An **instance** is defined by the following facts:
 > Transshipment is not currently supported,
 > and transshipment costs `T` for each node `node(X,T)` are ignored.
 
+Example instances are provided in the [`instances`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/instances) directory.
+
 #### CSV Conversion
 
 The facts …
