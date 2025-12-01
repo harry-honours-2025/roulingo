@@ -6,10 +6,13 @@ Roulingo is a preprocessing and solving system for the
 based on [**answer set programming**](https://potassco.org) (ASP).
 
 - [Installation](#installation)
+
 - [Usage](#usage)
     - [Instance Construction](#instance-construction)
+
         - [CSV Conversion](#csv-conversion)
         - [Preprocessing](#preprocessing)
+
     - [Solver Invocation](#solver-invocation)
 
 ## Installation
