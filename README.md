@@ -41,7 +41,7 @@ $ pip install .
 Finally, to verify your installation:
 
 ```console
-$ roulingo --version
+$ roulingo --help
 ```
 
 ## Usage
