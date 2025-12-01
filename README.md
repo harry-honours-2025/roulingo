@@ -7,13 +7,10 @@ based on [**answer set programming**](https://potassco.org) (ASP).
 
 - [Installation](#installation)
 - [Usage](#usage)
-
     - [Instance Construction](#instance-construction)
+        - [CSV Conversion](#csv-conversion)
+        - [Preprocessing](#preprocessing)
     - [Solver Invocation](#solver-invocation)
-
-<!--        - [CSV Conversion](#csv-conversion)-->
-<!--        - [Preprocessing](#preprocessing)-->
-
 
 ## Installation
 
