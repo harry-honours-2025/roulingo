@@ -51,7 +51,7 @@ $ roulingo --help
 …
 
 > [!TIP]
-> Invoke `roulingo --help` for an overview of available sub-commands.
+> Run `roulingo --help` for an overview of available sub-commands.
 
 ### Instance Construction
 
@@ -100,7 +100,12 @@ Example instances are provided in the [`instances`](https://github.com/harry-hon
 
 #### CSV Conversion
 
-The facts …
+Facts are generated from a collection of CSV files.
+Example CSV files are included in the [`data/csv`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) directory.
+These have been used to populate the [`instances`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/instances) directory.
+
+> [!TIP]
+> Run `roulingo convert --help` for an breakdown of CSV conversion arguments.
 
 #### Preprocessing
 
