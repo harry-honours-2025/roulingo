@@ -7,6 +7,7 @@ based on [**answer set programming**](https://potassco.org) (ASP).
 
 - [Installation](#installation)
 - [Usage](#usage)
+
     - [Instance Construction](#instance-construction)
     - [Solver Invocation](#solver-invocation)
 
