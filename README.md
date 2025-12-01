@@ -14,8 +14,38 @@ based on [**answer set programming**](https://potassco.org) (ASP).
 
 ## Installation
 
-…
+Roulingo should be installed locally after cloning this repository.
+It requires **Python 3.10** or above.
+Once the repository has been cloned,
+navigate to the directory and run:
 
+```console
+$ pip install .
+```
+
+> [!NOTE]
+> You may need to use `python3` and `pip3` instead of `python` and `pip`,
+> depending on your system.
+
+To install Roulingo into a virtual environment:
+
+```console
+$ python -m venv .venv
+$ source .venv/bin/activate  # Windows: .venv\Scripts\activate
+$ pip install .
+```
+
+> [!NOTE]
+> Refer to [this table](https://docs.python.org/3/library/venv.html#how-venvs-work) for the correct `source` command on your system.
+
+> [!TIP]
+> Use a virtual environment to avoid modifying your system-wide Python installation.
+
+Finally, to verify your installation:
+
+```console
+$ roulingo --version
+```
 
 ## Usage
 
