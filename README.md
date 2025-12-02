@@ -100,40 +100,37 @@ Example instances are provided in the [`instances`](https://github.com/harry-hon
 
 #### CSV Conversion
 
-The facts outlined above can be optionally generated using CSV files.
-Example CSV files are included in the [`data/csv`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) directory.
-These examples have been used to populate the [`instances`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/instances) directory.
+The facts described above can also be generated from CSV files.
+Example CSVs are provided in the [`data/csv`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) directory,
+and these have been used to create the instances in [`instances`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/instances).
 
-The `roulingo convert` command generates an ASP instance from these CSV files.
-For example:
+Use `roulingo convert` to build an ASP instance from a directory of CSV files. For example:
 
 ```console
 $ roulingo convert data/csv data/test.lp
 ```
 
 > [!IMPORTANT]
-> The CSV file names and column headings must correspond **exactly** to the
-> [examples provided](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv).
+> CSV file names and column headings must match the
+> [provided examples](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) exactly.
 
-This command generates the [`data/tiny.lp`](https://github.com/harry-honours-2025/harry-thesis-software/blob/main/data/tiny.lp)
-file using the CSV files included in the [`data/csv`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) directory.
-Note that converted facts are wrapped by the `data/1` atom;
-these must be [preprocessed](#preprocessing) before solving can occur.
+Running this command generates [`data/tiny.lp`](https://github.com/harry-honours-2025/harry-thesis-software/blob/main/data/tiny.lp).
+All generated facts are wrapped in the `data/1` atom; these must be [preprocessed](#preprocessing) before solving.
 
 Because ASP only supports integers,
-two additional options for `roulingo convert` define constant multipliers for converting real numbers into integers:
+two additional options for `roulingo convert` define multipliers for converting real numbers into integers:
 
-- The `--duration-factor` is 10 by default, and applies to:
+- The `--duration-factor` (default: 10) applies to:
     - Arc traversal durations
     - Minimum pickup frequencies
     - Maximum transit durations
 
-- The `--currency-factor` is 100 by default, and applies to:
+- The `--currency-factor` (default: 100) applies to:
     - Arc traversal costs
     - Revenues per unit
 
 > [!TIP]
-> Run `roulingo convert --help` for an breakdown of CSV conversion arguments.
+> Run `roulingo convert --help` for a usage breakdown.
 
 #### Preprocessing
 
