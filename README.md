@@ -117,8 +117,8 @@ $ roulingo convert data/csv data/test.lp
 Running this command generates [`data/tiny.lp`](https://github.com/harry-honours-2025/harry-thesis-software/blob/main/data/tiny.lp).
 All generated facts are wrapped in the `data/1` atom; these must be [preprocessed](#preprocessing) before solving.
 
-Because ASP only supports integers,
-two additional options for `roulingo convert` define multipliers for converting real numbers into integers:
+Because ASP does not support real numbers,
+two additional options for `roulingo convert` define multipliers for converting them into integers:
 
 - The `--duration-factor` (default: 10) applies to:
     - Arc traversal durations
