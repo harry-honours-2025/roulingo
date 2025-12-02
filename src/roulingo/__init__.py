@@ -57,7 +57,7 @@ def construct_conversion_args(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument(
         "--duration-factor",
-        default=2,
+        default=10,
         type=int,
         help="specify operand for converting floating-point duration values into integers",
     )

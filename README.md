@@ -100,9 +100,39 @@ Example instances are provided in the [`instances`](https://github.com/harry-hon
 
 #### CSV Conversion
 
-Facts are generated from a collection of CSV files.
+The facts outlined above can be optionally generated using CSV files.
 Example CSV files are included in the [`data/csv`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) directory.
-These have been used to populate the [`instances`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/instances) directory.
+These examples have been used to populate the [`instances`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/instances) directory.
+
+The `roulingo convert` command generates an ASP instance from these CSV files.
+For example:
+
+```console
+$ roulingo convert data/csv data/test.lp
+```
+
+> [!IMPORTANT]
+> The CSV file names and column headings must correspond **exactly** to the
+> [examples provided](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv).
+
+This command generates the [`data/tiny.lp`](https://github.com/harry-honours-2025/harry-thesis-software/blob/main/data/tiny.lp)
+file using the CSV files included in the [`data/csv`](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) directory.
+Note that converted facts are wrapped by the `data/1` atom;
+these must be [preprocessed](#preprocessing) before solving can occur.
+
+Because ASP only supports integers,
+two options are available for the `roulingo convert` command.
+These define constant multipliers for converting real numbers into integers:
+
+
+- `--duration-factor` is 10 by default, and applies to all **temporal values**:
+    - Arc traversal durations
+    - Minimum pickup frequencies
+    - Maximum transit durations
+
+- `--currency-factor` is 100 by default, and applies to:
+    - Arc traversal costs
+    - Revenues per unit
 
 > [!TIP]
 > Run `roulingo convert --help` for an breakdown of CSV conversion arguments.
