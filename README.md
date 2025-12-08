@@ -120,7 +120,9 @@ $ roulingo convert data/csv data/test.lp
 > [provided examples](https://github.com/harry-honours-2025/harry-thesis-software/tree/main/data/csv) exactly.
 
 Running this command generates [`data/tiny.lp`](https://github.com/harry-honours-2025/harry-thesis-software/blob/main/data/tiny.lp).
-All generated facts are wrapped in the `data/1` atom; these must be [preprocessed](#preprocessing) before solving.
+All generated facts are wrapped in the `data/1` atom,
+which indicates terms that belong to the converted input instance.
+These must be [preprocessed](#preprocessing) before solving.
 
 Because ASP does not support real numbers,
 two additional options for `roulingo convert` define multipliers for converting them into integers:
@@ -205,7 +207,42 @@ This feature is primarily intended for the generation of benchmarking instances.
 
 ##### Extracting Sub-instances
 
-…
+Preprocessing can extract sub-instances from an existing instance using the `--config` option.
+This option takes the path to an optional ASP configuration file that defines `drop/1` atoms.
+Any ground atom matching a `drop/1` rule is removed from the input instance during preprocessing.
+
+For example, the following configuration drops all months except the seventh:
+
+```answer-set-programming
+drop(month(M,S,E)) :- data(month(M,S,E)), M != 7.
+```
+
+> [!WARNING]
+> Months must remain contiguous.
+> Dropping interior months is not supported.
+
+When an atom is dropped, all dependent atoms are updated or removed accordingly.
+For instance, dropping a node removes all demands originating from or destined to that node,
+and dropping a month removes all demands occurring in that month.
+
+The following arguments are supported for the `drop/1` atom:
+
+- `node/2`
+- `month/3`
+- `demand/8`
+
+Given the configuration above saved as `config.lp`, preprocessing is performed as follows:
+
+```
+$ roulingo process input.lp output.lp --config config.lp
+```
+
+If `--config` is provided without a file path,
+the [default configuration file](https://github.com/harry-honours-2025/harry-thesis-software/blob/main/src/roulingo/processing/encodings/config.lp) is used:
+
+```console
+$ roulingo process input.lp output.lp --config
+```
 
 ### Solver Invocation
 
