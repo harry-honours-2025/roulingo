@@ -51,9 +51,9 @@ $ roulingo --help
 
 Roulingo provides three subcommands:
 
-1. `convert` generates an instance from input data.
-2. `process` preprocesses the instance.
-3. `solve` runs the solver on a preprocessed instance.
+1. [`convert`](#csv-conversion) generates an instance from input data
+2. [`process`](#preprocessing) preprocesses the instance
+3. [`solve`](#solver-invocation) runs the solver on a preprocessed instance
 
 > [!TIP]
 > Run `roulingo --help` to view all available subcommands and their options.
@@ -181,10 +181,6 @@ All nodes, vehicles, availabilities, arcs, and demands have been duplicated and 
 with a prefix indicating the sub-network to which each copy belongs:
 
 ```answer-set-programming
-%*
-   #const dup = 2.
-*%
-#const horizon=30.
 node(a1).
 node(a2).
 node(b1).
@@ -207,7 +203,7 @@ demand(b0,b1,b2,0,100,4,10,5).
 
 This feature is primarily intended for the generation of benchmarking instances.
 
-##### Extracting Subinstances
+##### Extracting Sub-instances
 
 …
 
