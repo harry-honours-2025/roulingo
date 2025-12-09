@@ -271,7 +271,15 @@ $ roulingo solve instance.lp --duration 300 --solution solution.lp
 > $ clingo --help=3
 > ```
 
-#### Iterative Solving
+The `--iterative-solving` option decomposes an instance into monthly sub-problems
+and solves them sequentially, accumulating a single solution across all months:
 
-The `--iterative-solving` option for `roulingo solve` treats each month as an individual sub-problem,
-and accumulates the solution by solving each individual month in order.
+```console
+$ roulingo solve instance.lp --duration 3600 --iterative-solving
+```
+
+> [!NOTE]
+> Iterative solving is only supported for instances containing exactly six months.
+
+The total solver duration is divided evenly across the monthly sub-problems.
+In the example above, each month is allocated 600 seconds of solving time.
