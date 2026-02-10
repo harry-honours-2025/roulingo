@@ -1,7 +1,7 @@
 # Roulingo
 
 Roulingo is a preprocessing and solving system for the
-transit-constraint recurring pickup and delivery problem (TCRPDP)
+transit-constrained recurring pickup and delivery problem (TCRPDP)
 based on [answer set programming](https://potassco.org) (ASP).
 
 - [Installation](#installation)
